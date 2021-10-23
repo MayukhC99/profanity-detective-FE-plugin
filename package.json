@@ -1,0 +1,35 @@
+{
+  "name": "profanity-detective-fe-plugin",
+  "version": "1.0.0",
+  "description": "A plug and play watcher over profanity-detective library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MayukhC99/profanity-detective-FE-plugin.git"
+  },
+  "keywords": [
+    "profanity",
+    "profane",
+    "bad",
+    "words",
+    "slangs"
+  ],
+  "author": "Mayukh Chakrabarti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MayukhC99/profanity-detective-FE-plugin/issues"
+  },
+  "homepage": "https://github.com/MayukhC99/profanity-detective-FE-plugin#readme",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "swearjar-extended2": "^0.2.9"
+  },
+  "devDependencies": {
+    "webpack": "^5.59.1",
+    "webpack-cli": "^4.9.1"
+  }
+}

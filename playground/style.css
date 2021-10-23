@@ -1,0 +1,13 @@
+.profanity-help-block.error{
+    color: red;
+    font-size: 15px;
+    display: block;
+    margin-top: 2px;
+}
+
+.profanity-help-block.warn{
+    color: orange;
+    font-size: 15px;
+    display: block;
+    margin-top: 2px;
+}
