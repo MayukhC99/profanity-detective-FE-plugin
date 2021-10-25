@@ -5,7 +5,7 @@ var PROFANITY_INPUT_WATCH_COUNT = 0;
 
 window.profanityDetector = function(element) {
     let self = $(element),
-        profanityAttr = self.attr('detectProfanity'),
+        profanityAttr = self.attr('detect-profanity'),
         profanityType = self.attr('profanity-type');
     
     // For some browsers, `attr` is undefined; for others, `attr` is false. Check for both.
