@@ -1,6 +1,6 @@
 {
   "name": "profanity-detective-fe-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A plug and play watcher over profanity-detective library",
   "main": "index.js",
   "scripts": {
