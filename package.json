@@ -26,9 +26,9 @@
   "author": "Mayukh Chakrabarti",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MayukhC99/profanity-detective-FE-plugin/issues"
+    "url": "https://github.com/MayukhC99/profanity-detective-plugin/issues"
   },
-  "homepage": "https://github.com/MayukhC99/profanity-detective-FE-plugin#readme",
+  "homepage": "https://github.com/MayukhC99/profanity-detective-plugin#readme",
   "dependencies": {
     "jquery": "^3.6.0",
     "swearjar-extended2": "^0.2.9"
