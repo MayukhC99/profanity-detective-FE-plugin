@@ -2,6 +2,13 @@ import $ from 'jquery';
 
 import { DEFAULT_ERROR_MESSAGE } from './messsageUtils'; 
 
+/**
+ * Reads and returns the input provided by the
+ * host application
+ * 
+ * @param element : The dom element which is getting processed
+ * @returns       : The serialized input value from host application
+ */
 export const serializeInputs = (element) => {
     let self = $(element),
         profanityAttr = self.attr('detect-profanity'),
@@ -21,6 +28,17 @@ export const serializeInputs = (element) => {
     };
 }
 
+
+/**
+ * Invalidates the field and renders a message in the DOM under the
+ * input element
+ *  
+ * @param {*} self : The element which is getting processed
+ * @param {String} PROFINITY_ERROR_MSG : The error message needed to be rendered 
+ * @param {Number} PROFANITY_INPUT_WATCH_COUNT : THe watch count of input elements
+ * @param {String} profanityType : The type of message to be displayed
+ * @returns : The updated watch count of input elements
+ */
 export const invalidateField = (
     self, 
     PROFINITY_ERROR_MSG, 
@@ -41,8 +59,16 @@ export const invalidateField = (
             `<span class="profanity-help-block ${profanityType}" data-profanity-count="${PROFANITY_INPUT_WATCH_COUNT}" style="display:none;">${PROFINITY_ERROR_MSG}</span>`
         ).insertAfter(self).fadeIn();
     }
+
+    return PROFANITY_INPUT_WATCH_COUNT;
 }
 
+
+/**
+ * Validates the field and removes any rendered message
+ * 
+ * @param {*} self : The element which is getting processed
+ */
 export const validateField = (self) => {
     if (self.data('profanity-count')) {
         self.attr('profane-valid', true);

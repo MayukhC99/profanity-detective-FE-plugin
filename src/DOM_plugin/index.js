@@ -1,6 +1,6 @@
 import $ from 'jquery';
-import swearjar from 'swearjar-extended2';
 
+import { isProfane } from '../validator';
 import { messageFormatter } from './utils/messsageUtils'; 
 import { serializeInputs, invalidateField, validateField } from './utils/profanity';
 
@@ -17,8 +17,8 @@ window.profanityDetector = function(element) {
     // For some browsers, `attr` is undefined; for others, `attr` is false. Check for both.
     if (typeof profanityAttr !== typeof undefined && profanityAttr !== false) {
         let text = self.val();
-        const profanityDetails = swearjar.detailedProfane(text);
-        if (profanityDetails.profane) {
+        const profanityDetails = isProfane(text);
+        if (!profanityDetails.valid) {
             const words = Object.keys(profanityDetails.wordCount);
             let curseWords = '';
             words.map((val, index) => {
@@ -26,7 +26,9 @@ window.profanityDetector = function(element) {
             });
             const PROFINITY_ERROR_MSG = messageFormatter(errorMessage, { words: curseWords });
             // Invalidate the field
-            invalidateField(self, PROFINITY_ERROR_MSG, PROFANITY_INPUT_WATCH_COUNT, profanityType);
+            PROFANITY_INPUT_WATCH_COUNT = invalidateField(
+                self, PROFINITY_ERROR_MSG, PROFANITY_INPUT_WATCH_COUNT, profanityType
+            );
         } else {
             // Validate the field if no profanity found
             validateField(self);
